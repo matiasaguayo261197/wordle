@@ -28,11 +28,13 @@ def verificador_palabra(palabra_ingresada, palabra_secreta):
     return letras_verificadas
 
 
-#  Palabra secreta elegida al azar
+#  Palabra secreta elegida al azar con el modulo "random" y la funcion "choice()"
 palabra_secreta = random.choice(palabras_validas)
 
 intentos = 0
 max_intentos = 6
+
+
 
 while intentos < max_intentos:
     print(f"Te quedan {max_intentos - intentos} intentos")
@@ -41,15 +43,13 @@ while intentos < max_intentos:
     # Validación básica
     if len(palabra_ingresada) != cantidad_letras:
         print(f"La palabra debe tener {cantidad_letras} letras")
-        continue
+        continue #Ignora todo lo que sigue en esa vuelta del bucle
 
     if palabra_ingresada == palabra_secreta:
         print("¡Ganaste! Adivinaste la palabra")
         break
 
     resultado = verificador_palabra(palabra_ingresada, palabra_secreta)
-    print("Resultado:", " ".join(resultado))
-
-    intentos += 1
+    print("Resultado:", " ".join(resultado)) #join es una función de cadena integrada que concatena todos los elementos de un iterable 
 else:
     print(f"Perdiste. La palabra era: {palabra_secreta}")
