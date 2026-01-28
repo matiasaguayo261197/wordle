@@ -1,4 +1,4 @@
-import random
+import random    #argar el módulo estándar random de Python, que permite generar valores aleatorios.
 
 cantidad_letras = 5
 
@@ -13,7 +13,7 @@ palabras_validas = [
     "raton",
     "luces"
 ]
-
+# hacemos la funcion de verificador de palabra 
 def verificador_palabra(palabra_ingresada, palabra_secreta):
     letras_verificadas = []
 
